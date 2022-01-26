@@ -13,7 +13,7 @@ const NoteItem = (props) => {
                     <strong className={`card-text text-${note.tag.length === 0 ? "danger" : "primary"}`}>{note.tag.length === 0 ? "Tag undefined" : "#" + note.tag}</strong>
                     <p className="card-text">{note.description}</p>
                     <div className="fontAwesomeIcons">
-                        <i className="far fa-trash-alt" onClick={() => { deleteNote(note._id) }}></i>
+                        <i className="far fa-trash-alt" onClick={() => { deleteNote(note._id);props.showAlert("A note has been deleted", "success") }}></i>
                         <i className="far fa-edit" onClick={() => { updateNote(note) }}></i>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Signup = () => {
+const Signup = (props) => {
 
     //state for creating user
     const [userInfo, setUserInfo] = useState({ userName: "", email: "", password: "" });
@@ -37,8 +37,9 @@ const Signup = () => {
         if (jsonResp.success) {
             localStorage.setItem('token', jsonResp.authtoken);
             history('/');
+            props.showAlert("Account created successfully", "success")
         } else {
-            alert("Unable to create a new account");
+            props.showAlert("Unable to create an account", "danger")
         }
 
     }
