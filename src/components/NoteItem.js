@@ -10,7 +10,7 @@ const NoteItem = (props) => {
             <div className="card my-2">
                 <div className="card-body">
                     <h5 className="card-title">{note.title}</h5>
-                    <strong className="card-text text-danger">#{note.tag}</strong>
+                    <strong className={`card-text text-${note.tag.length === 0 ? "danger" : "primary"}`}>{note.tag.length === 0 ? "Tag undefined" : "#" + note.tag}</strong>
                     <p className="card-text">{note.description}</p>
                     <div className="fontAwesomeIcons">
                         <i className="far fa-trash-alt" onClick={() => { deleteNote(note._id) }}></i>
