@@ -6,7 +6,7 @@ const Login = (props) => {
     //credentials state
     const [credentials, setCredentials] = useState({ email: "", password: "" });
 
-    //using useHistory hook for redirect
+    //using useNavigate hook for redirect
     const history = useNavigate()
 
     //host

@@ -17,7 +17,7 @@ const NoteSate = (props) => {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFlNThjYzEyNTI3ODRjMDYzZTBkOTYwIn0sImlhdCI6MTY0MzE3ODMxNX0.QjImSQgLO2i8-EF8aRCHHxry3Qv9GxysdPIT-iATDOc'
+                'auth-token': localStorage.getItem('token')
             }
         });
         const jsonResp = await response.json();
@@ -34,7 +34,7 @@ const NoteSate = (props) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFlNThjYzEyNTI3ODRjMDYzZTBkOTYwIn0sImlhdCI6MTY0MzE3ODMxNX0.QjImSQgLO2i8-EF8aRCHHxry3Qv9GxysdPIT-iATDOc'
+                'auth-token': localStorage.getItem('token')
             },
             body: JSON.stringify({ title, description, tag })
         });
@@ -53,11 +53,11 @@ const NoteSate = (props) => {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFlNThjYzEyNTI3ODRjMDYzZTBkOTYwIn0sImlhdCI6MTY0MzE3ODMxNX0.QjImSQgLO2i8-EF8aRCHHxry3Qv9GxysdPIT-iATDOc'
+                'auth-token': localStorage.getItem('token')
             }
         });
         const jsonResp = await response.json();
-        // console.log(jsonResp);
+        console.log(jsonResp);
 
         // console.log("Deleting note with id: " + id);
         const newNotes = notes.filter((note) => { return note._id !== id });
@@ -72,12 +72,12 @@ const NoteSate = (props) => {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFlNThjYzEyNTI3ODRjMDYzZTBkOTYwIn0sImlhdCI6MTY0MzE3ODMxNX0.QjImSQgLO2i8-EF8aRCHHxry3Qv9GxysdPIT-iATDOc'
+                'auth-token': localStorage.getItem('token')
             },
             body: JSON.stringify({ title, description, tag })
         });
         const jsonResp = await response.json();
-        // console.log(jsonResp);
+        console.log(jsonResp);
 
         let newNotes = JSON.parse(JSON.stringify(notes));
 

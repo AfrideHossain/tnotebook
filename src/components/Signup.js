@@ -6,7 +6,7 @@ const Signup = (props) => {
     //state for creating user
     const [userInfo, setUserInfo] = useState({ userName: "", email: "", password: "" });
 
-    //using useHistory hook for redirect
+    //using useNavigate hook for redirect
     const history = useNavigate()
 
     //onChange function
